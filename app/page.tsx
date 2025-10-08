@@ -43,7 +43,7 @@ export default function LandingPage() {
                 </a>
               </li>
               <li>
-                <Link href="/login">
+                <Link href="/auth/login">
                   <Button className="bg-[#007AFF] hover:bg-[#0055CC] text-white rounded-lg px-6">Sign In</Button>
                 </Link>
               </li>

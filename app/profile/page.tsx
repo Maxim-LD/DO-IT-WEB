@@ -32,75 +32,90 @@ export default function ProfilePage() {
     ]
 
     return (
-        <AppShell>
-            <div className="space-y-6">
-                {/* Header */}
-                <div>
-                    <h1 className="text-3xl font-bold text-charcoal-black">Profile</h1>
-                    <p className="text-charcoal-black/60 mt-1">Manage your account</p>
-                </div>
-
-                {/* Profile Card */}
-                <div className="space-y-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="bg-white rounded-xl p-6 shadow-sm border border-gray-200"
-                    >
-                        <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-                            <Avatar className="w-20 h-20">
-                            <AvatarImage src="/placeholder.svg?height=80&width=80" />
-                            <AvatarFallback className="bg-electric-blue text-white text-2xl font-bold">JD</AvatarFallback>
-                            </Avatar>
-                            <div className="flex-1 w-full">
-                                <h2 className="text-xl font-bold text-charcoal-black">John Doe</h2>
-                                <p className="text-charcoal-black/60">john.doe@example.com</p>
-                            </div>
-                            <Button variant="outline" onClick={() => handleFeatureClick("Edit Profile")} className="w-full sm:w-auto">
-                            Edit Profile
-                            </Button>
-                        </div>
-                    </motion.div>
-                </div>
-
-                {/* Profile Settings Sections */}
-                <div className="space-y-4">
-                {profileSections.map((section, index) => (
-                    <motion.div
-                        key={section.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        className="bg-white rounded-xl p-6 shadow-sm border border-gray-200"
-                    >
-                    <div className="flex items-center gap-2 mb-4">
-                        <section.icon className="w-5 h-5 text-electric-blue" />
-                        <h3 className="text-lg font-bold text-charcoal-black">{section.title}</h3>
-                    </div>
-                    <div className="space-y-3">
-                        {section.items.map((item) => (
-                        <div key={item.label} className="flex items-center justify-between py-2">
-                            <span className="text-charcoal-black/80">{item.label}</span>
-                            {"toggle" in item ? (
-                            <Switch />
-                            ) : (
-                            <button
-                                onClick={"action" in item ? item.action : undefined}
-                                className="text-electric-blue hover:text-electric-blue/80 transition-colors"
-                            >
-                                <ChevronRight className="w-5 h-5" />
-                            </button>
-                            )}
-                        </div>
-                        ))}
-                    </div>
-                    </motion.div>
-                ))}
-                </div>
-
-            </div>
-                <ComingSoonModal open={comingSoonOpen} onOpenChange={setComingSoonOpen} featureName={selectedFeature} />
-        </AppShell>
+    <AppShell>
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold text-charcoal-black">Profile</h1>
+          <p className="text-charcoal-black/60 mt-1">Welcome back! Here's your profile overview.</p>
+        </div>
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+          <h2 className="text-xl font-bold text-charcoal-black">Coming Soon</h2>
+          <p className="text-charcoal-black/60 mt-2">Your personalized profile actions is under construction. Stay tuned!</p>
+        </div>
+      </div>
+    </AppShell>
     )
+    
+    // return (
+    //     <AppShell>
+    //         <div className="space-y-6">
+    //             {/* Header */}
+    //             <div>
+    //                 <h1 className="text-3xl font-bold text-charcoal-black">Profile</h1>
+    //                 <p className="text-charcoal-black/60 mt-1">Manage your account</p>
+    //             </div>
+
+    //             {/* Profile Card */}
+    //             <div className="space-y-4">
+    //                 <motion.div
+    //                     initial={{ opacity: 0, y: 20 }}
+    //                     animate={{ opacity: 1, y: 0 }}
+    //                     className="bg-white rounded-xl p-6 shadow-sm border border-gray-200"
+    //                 >
+    //                     <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+    //                         <Avatar className="w-20 h-20">
+    //                         <AvatarImage src="/placeholder.svg?height=80&width=80" />
+    //                         <AvatarFallback className="bg-electric-blue text-white text-2xl font-bold">JD</AvatarFallback>
+    //                         </Avatar>
+    //                         <div className="flex-1 w-full">
+    //                             <h2 className="text-xl font-bold text-charcoal-black">John Doe</h2>
+    //                             <p className="text-charcoal-black/60">john.doe@example.com</p>
+    //                         </div>
+    //                         <Button variant="outline" onClick={() => handleFeatureClick("Edit Profile")} className="w-full sm:w-auto">
+    //                         Edit Profile
+    //                         </Button>
+    //                     </div>
+    //                 </motion.div>
+    //             </div>
+
+    //             {/* Profile Settings Sections */}
+    //             <div className="space-y-4">
+    //             {profileSections.map((section, index) => (
+    //                 <motion.div
+    //                     key={section.title}
+    //                     initial={{ opacity: 0, y: 20 }}
+    //                     animate={{ opacity: 1, y: 0 }}
+    //                     transition={{ delay: index * 0.1 }}
+    //                     className="bg-white rounded-xl p-6 shadow-sm border border-gray-200"
+    //                 >
+    //                 <div className="flex items-center gap-2 mb-4">
+    //                     <section.icon className="w-5 h-5 text-electric-blue" />
+    //                     <h3 className="text-lg font-bold text-charcoal-black">{section.title}</h3>
+    //                 </div>
+    //                 <div className="space-y-3">
+    //                     {section.items.map((item) => (
+    //                     <div key={item.label} className="flex items-center justify-between py-2">
+    //                         <span className="text-charcoal-black/80">{item.label}</span>
+    //                         {"toggle" in item ? (
+    //                         <Switch />
+    //                         ) : (
+    //                         <button
+    //                             onClick={"action" in item ? item.action : undefined}
+    //                             className="text-electric-blue hover:text-electric-blue/80 transition-colors"
+    //                         >
+    //                             <ChevronRight className="w-5 h-5" />
+    //                         </button>
+    //                         )}
+    //                     </div>
+    //                     ))}
+    //                 </div>
+    //                 </motion.div>
+    //             ))}
+    //             </div>
+
+    //         </div>
+    //             <ComingSoonModal open={comingSoonOpen} onOpenChange={setComingSoonOpen} featureName={selectedFeature} />
+    //     </AppShell>
+    // )
 
 }
