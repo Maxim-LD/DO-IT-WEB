@@ -1,4 +1,4 @@
-import { DoItIcon } from "./do-it-logo"
+import { DoItIcon, DoItLogo, DoItWordmark } from "./do-it-logo"
 import { CheckCircle2, Circle, Plus, Flame, Bell } from "lucide-react"
 
 export function MobileMockup() {
@@ -22,7 +22,7 @@ export function MobileMockup() {
             <DoItIcon size={40} />
             <div>
               <h1 className="text-xl font-bold text-[#1E1E1E]" style={{ fontFamily: "var(--font-poppins)" }}>
-                DO-IT
+                <DoItWordmark height={32} />
               </h1>
               <p className="text-xs text-[#1E1E1E]/60">Wednesday, Jan 10</p>
             </div>

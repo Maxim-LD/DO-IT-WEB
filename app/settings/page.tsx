@@ -2,11 +2,10 @@
 
 import { useState } from "react"
 import { AppShell } from "@/components/app-shell"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { ComingSoonModal } from "@/components/coming-soon-modal"
-import { User, Bell, Lock, Palette, HelpCircle, LogOut, ChevronRight } from "lucide-react"
+import { Bell, Lock, Palette, HelpCircle, ChevronRight } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function SettingsPage() {
@@ -19,15 +18,6 @@ export default function SettingsPage() {
   }
 
   const settingsSections = [
-    {
-      title: "Account",
-      icon: User,
-      items: [
-        { label: "Edit Profile", action: () => handleFeatureClick("Edit Profile") },
-        { label: "Change Password", action: () => handleFeatureClick("Change Password") },
-        { label: "Privacy Settings", action: () => handleFeatureClick("Privacy Settings") },
-      ],
-    },
     {
       title: "Notifications",
       icon: Bell,
@@ -61,29 +51,8 @@ export default function SettingsPage() {
         {/* Header */}
         <div>
           <h1 className="text-3xl font-bold text-charcoal-black">Settings</h1>
-          <p className="text-charcoal-black/60 mt-1">Manage your account and preferences</p>
+          <p className="text-charcoal-black/60 mt-1">Manage your setup and preferences</p>
         </div>
-
-        {/* Profile Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-xl p-6 shadow-sm border border-gray-200"
-        >
-          <div className="flex items-center gap-4">
-            <Avatar className="w-20 h-20">
-              <AvatarImage src="/placeholder.svg?height=80&width=80" />
-              <AvatarFallback className="bg-electric-blue text-white text-2xl font-bold">JD</AvatarFallback>
-            </Avatar>
-            <div className="flex-1">
-              <h2 className="text-xl font-bold text-charcoal-black">John Doe</h2>
-              <p className="text-charcoal-black/60">john.doe@example.com</p>
-            </div>
-            <Button variant="outline" onClick={() => handleFeatureClick("Edit Profile")}>
-              Edit Profile
-            </Button>
-          </div>
-        </motion.div>
 
         {/* Settings Sections */}
         <div className="space-y-4">

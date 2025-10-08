@@ -80,12 +80,12 @@ export default function LandingPage() {
                           </a>
                         </li>
                         <li className="pt-4 border-t">
-                          <Link href="/login">
+                          <Link href="/auth/login">
                             <Button className="w-full bg-[#007AFF] hover:bg-[#0055CC] text-white rounded-lg px-6">Sign In</Button>
                           </Link>
                         </li>
                         <li>
-                          <Link href="/signup">
+                          <Link href="/auth/signup">
                             <Button variant="outline" className="w-full border-2 border-[#007AFF] text-[#007AFF] hover:bg-[#007AFF] hover:text-white rounded-lg px-6">
                               Get Started
                             </Button>
@@ -119,19 +119,19 @@ export default function LandingPage() {
                 </div>
               </div>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <Link href="/signup">
+                <Link href="/auth/signup">
                   <Button className="bg-[#007AFF] hover:bg-[#0055CC] text-white px-8 py-6 text-lg rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
                     Get Started
                   </Button>
                 </Link>
-                <a href="#how">
+                <Link href="/brand">
                   <Button
                     variant="outline"
                     className="border-2 border-[#007AFF] text-[#007AFF] hover:bg-[#007AFF] hover:text-white px-8 py-6 text-lg rounded-xl font-bold transition-all hover:-translate-y-1 bg-transparent"
                   >
-                    Learn More
+                    View Branding
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="hidden md:flex justify-center">
@@ -177,31 +177,6 @@ export default function LandingPage() {
               <p className="text-[#8B9DB8] text-center">Organize your daily to-dos with smart lists and priorities</p>
             </div>
 
-            {/* Focus Mode
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#162B42] rounded-full flex items-center justify-center mb-6 transition-transform hover:scale-110 mx-auto">
-                <svg width="40" height="40" viewBox="0 0 40 40">
-                  <circle cx="20" cy="20" r="14" fill="none" stroke="#FF7A00" strokeWidth="3" />
-                  <path
-                    d="M 20,6 L 20,2 M 20,38 L 20,34 M 6,20 L 2,20 M 38,20 L 34,20"
-                    stroke="#FF7A00"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M 24,17 L 20,20 L 24,23"
-                    fill="none"
-                    stroke="#FF7A00"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-[#1E1E1E] mb-2 text-center">Focus Mode</h3>
-              <p className="text-[#8B9DB8] text-center">Block distractions and manage time with Pomodoro techniques</p>
-            </div> */}
-
             {/* Goals */}
             <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="w-20 h-20 bg-[#162B42] rounded-full flex items-center justify-center mb-6 transition-transform hover:scale-110 mx-auto">
@@ -217,21 +192,6 @@ export default function LandingPage() {
               <p className="text-[#8B9DB8] text-center">Set and track meaningful goals with progress visualization</p>
             </div>
 
-            {/* Projects
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#162B42] rounded-full flex items-center justify-center mb-6 transition-transform hover:scale-110 mx-auto">
-                <svg width="40" height="40" viewBox="0 0 40 40">
-                  <rect x="8" y="8" width="24" height="24" rx="3" fill="none" stroke="#FF7A00" strokeWidth="3" />
-                  <circle cx="15" cy="15" r="2.5" fill="#FF7A00" />
-                  <circle cx="25" cy="15" r="2.5" fill="#FF7A00" />
-                  <circle cx="15" cy="25" r="2.5" fill="#FF7A00" />
-                  <circle cx="25" cy="25" r="2.5" fill="#FF7A00" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-[#1E1E1E] mb-2 text-center">Projects</h3>
-              <p className="text-[#8B9DB8] text-center">Organize complex projects with nested tasks and milestones</p>
-            </div> */}
-              
             {/* Reminders */}
             <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="w-20 h-20 bg-[#162B42] rounded-full flex items-center justify-center mb-6 transition-transform hover:scale-110 mx-auto">
@@ -294,21 +254,6 @@ export default function LandingPage() {
               <p className="text-[#8B9DB8] text-center">Track health metrics and maintain work-life balance</p>
             </div>
 
-            {/* Calendar
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#162B42] rounded-full flex items-center justify-center mb-6 transition-transform hover:scale-110 mx-auto">
-                <svg width="40" height="40" viewBox="0 0 40 40">
-                  <rect x="10" y="12" width="20" height="18" rx="2" fill="none" stroke="#FF7A00" strokeWidth="3" />
-                  <line x1="10" y1="18" x2="30" y2="18" stroke="#FF7A00" strokeWidth="3" />
-                  <circle cx="16" cy="23" r="1.5" fill="#FF7A00" />
-                  <circle cx="20" cy="23" r="1.5" fill="#FF7A00" />
-                  <circle cx="24" cy="23" r="1.5" fill="#FF7A00" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-[#1E1E1E] mb-2 text-center">Calendar</h3>
-              <p className="text-[#8B9DB8] text-center">Seamlessly integrate with your existing calendar apps</p>
-            </div> */}
-
             {/* Habits */}
             <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="w-20 h-20 bg-[#162B42] rounded-full flex items-center justify-center mb-6 transition-transform hover:scale-110 mx-auto">
@@ -327,21 +272,6 @@ export default function LandingPage() {
               <h3 className="text-xl font-bold text-[#1E1E1E] mb-2 text-center">Habits</h3>
               <p className="text-[#8B9DB8] text-center">Build positive routines with streak tracking and rewards</p>
             </div>
-
-            {/* Settings
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-              <div className="w-20 h-20 bg-[#162B42] rounded-full flex items-center justify-center mb-6 transition-transform hover:scale-110 mx-auto">
-                <svg width="40" height="40" viewBox="0 0 40 40">
-                  <circle cx="20" cy="20" r="7" fill="none" stroke="#FF7A00" strokeWidth="3" />
-                  <rect x="18.5" y="6" width="3" height="6" rx="1" fill="#FF7A00" />
-                  <rect x="18.5" y="28" width="3" height="6" rx="1" fill="#FF7A00" />
-                  <rect x="6" y="18.5" width="6" height="3" ry="1" fill="#FF7A00" />
-                  <rect x="28" y="18.5" width="6" height="3" ry="1" fill="#FF7A00" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-[#1E1E1E] mb-2 text-center">Settings</h3>
-              <p className="text-[#8B9DB8] text-center">Customize every aspect to match your workflow preferences</p>
-            </div> */}
           </div>
         </div>
       </section>
@@ -457,17 +387,17 @@ export default function LandingPage() {
               <h4 className="text-white font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="hover:text-[#007AFF] transition-colors">
+                  <a className="hover:text-[#007AFF] transition-colors">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#007AFF] transition-colors">
+                  <a className="hover:text-[#007AFF] transition-colors">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#007AFF] transition-colors">
+                  <a className="hover:text-[#007AFF] transition-colors">
                     Careers
                   </a>
                 </li>
@@ -477,17 +407,17 @@ export default function LandingPage() {
               <h4 className="text-white font-bold mb-4">Support</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="hover:text-[#007AFF] transition-colors">
+                  <a className="hover:text-[#007AFF] transition-colors">
                     Help Center
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#007AFF] transition-colors">
+                  <a className="hover:text-[#007AFF] transition-colors">
                     Contact
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#007AFF] transition-colors">
+                  <a className="hover:text-[#007AFF] transition-colors">
                     Privacy
                   </a>
                 </li>

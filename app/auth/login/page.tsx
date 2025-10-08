@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ComingSoonModal } from "@/components/coming-soon-modal"
-import { GoogleIcon } from "../../public/brand-assets/icons/google-icon"
-import { FacebookIcon } from "../../public/brand-assets/icons/facebook-icon"
+import { GoogleIcon } from "../../../public/brand-assets/icons/google-icon"
+import { FacebookIcon } from "../../../public/brand-assets/icons/facebook-icon"
 
 export default function LoginPage() {
   const [comingSoonOpen, setComingSoonOpen] = useState(false)

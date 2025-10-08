@@ -7,16 +7,35 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ComingSoonModal } from "@/components/coming-soon-modal"
-import { GoogleIcon } from "../../public/brand-assets/icons/google-icon"
-import { FacebookIcon } from "../../public/brand-assets/icons/facebook-icon"
+import { GoogleIcon } from "../../../public/brand-assets/icons/google-icon"
+import { FacebookIcon } from "../../../public/brand-assets/icons/facebook-icon"
 
 export default function SignUpPage() {
   const [comingSoonOpen, setComingSoonOpen] = useState(false)
   const [selectedFeature, setSelectedFeature] = useState("")
 
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    confirm_password: '',
+    username: '',
+    fullname: '',
+    status: '',
+    occupation: '',
+    phone: '',
+    date_of_birth: ''
+  })
+
+
   const handleSocialLoginClick = (provider: string) => {
     setSelectedFeature(`${provider} Login`)
     setComingSoonOpen(true)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    
   }
 
   return (
@@ -43,11 +62,18 @@ export default function SignUpPage() {
             <h1 className="text-2xl font-bold text-charcoal-black mb-1">Create an Account</h1>
             <p className="text-charcoal-black/60 mb-6">Start your productivity journey today.</p>
 
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <Label htmlFor="name">Full Name</Label>
-                <Input id="name" type="text" placeholder="John Doe" />
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder="John Doe"
+                  value={formData.fullname}
+                  onChange={(e) => setFormData({ ...formData, fullname: e.target.value})}
+                />
               </div>
+
               <div>
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" type="email" placeholder="john.doe@example.com" />
