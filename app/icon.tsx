@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og"
-import { AgendosIcon } from "@/components/brand/logo/AgendosIcon"
 
 // Route segment config
 export const runtime = "edge"
@@ -27,7 +26,16 @@ export default function Icon() {
         }}
       >
         <div style={{ display: "flex", width: 24, height: 24 }}>
-          <AgendosIcon variant="light" />
+          <svg
+            width="100%"
+            height="100%"
+            viewBox="-40 -40 80 80"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M -20,18 L 0,-22 L 20,18 L 10,18 L 0,2 L -10,18 Z" fill="white" />
+            <circle cx="0" cy="12" r="6" fill="#FF7A00" />
+          </svg>
         </div>
       </div>
     ),
