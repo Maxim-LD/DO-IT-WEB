@@ -1,10 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
-  /* DO-IT Brand Colors */
+  /* AGENDOS Brand Colors */
   --electric-blue: #007aff;
   --vibrant-orange: #ff7a00;
   --charcoal-black: #1e1e1e;
@@ -129,5 +127,4 @@
   body {
     @apply bg-background text-foreground;
   }
-  /* Removed separate heading font family - now using Montserrat for everything */
 }

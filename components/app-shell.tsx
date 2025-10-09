@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { DoItLogo, DoItWordmark } from "@/components/do-it-logo"
+import { AgendosIcon } from "@/components/brand/logo/AgendosIcon"
+import { AgendosWordmark } from "@/components/brand/logo/AgendosWordmark"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { LayoutDashboard, Settings, LogOut, User, ClipboardList } from "lucide-react"
@@ -41,8 +42,8 @@ export function AppShell({ children }: AppShellProps) {
       >
         <div className="flex h-full w-full flex-col">
           <div className={cn("flex h-20 items-center overflow-hidden border-b", isExpanded ? "justify-start gap-3 px-6" : "justify-center")}>
-            <DoItLogo size={32} href="/" />
-            {isExpanded && <DoItWordmark height={28} href="/" />}
+            <AgendosIcon href="/" className="w-8 h-8" />
+            {isExpanded && <AgendosWordmark href="/" className="text-2xl" />}
           </div>
           <nav className="flex-1 space-y-2 p-4">
             {navItems.map((item) => (

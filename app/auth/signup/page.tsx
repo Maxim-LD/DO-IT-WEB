@@ -2,13 +2,13 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { DoItLogo, DoItWordmark } from "@/components/do-it-logo"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ComingSoonModal } from "@/components/coming-soon-modal"
 import { GoogleIcon } from "../../../public/brand-assets/icons/google-icon"
 import { FacebookIcon } from "../../../public/brand-assets/icons/facebook-icon"
+import { AgendosLogo } from "@/components/brand/logo/AgendosLogo"
+import { AgendosIcon } from "@/components/brand/logo/AgendosIcon"
 
 export default function SignUpPage() {
   const [comingSoonOpen, setComingSoonOpen] = useState(false)
@@ -41,25 +41,13 @@ export default function SignUpPage() {
   return (
     <>
       <div className="relative min-h-screen bg-gradient-to-br from-[#0A1628] to-[#1E3A52] flex flex-col justify-center items-center p-4 overflow-hidden">
-        {/* Background floating logos */}
-        <div className="absolute top-1/4 -left-24 opacity-5 animate-float-slow -z-1">
-          <DoItLogo size={300} variant="hero" />
-        </div>
-        <div className="absolute bottom-1/4 -right-24 opacity-5 animate-float-slower -z-1">
-          <DoItLogo size={300} variant="hero" />
-        </div>
-        <div className="absolute top-10 right-10 opacity-5 animate-float -z-1">
-          <DoItLogo size={150} variant="hero" />
-        </div>
-
         <div className="w-full max-w-md">
           <div className="flex justify-center items-center gap-3 mb-8">
-            <DoItLogo size={40} href="/" />
-            <DoItWordmark height={32} variant="inverse" href="/" />
+            <AgendosLogo variant="dark" className="text-3xl" href="/" />
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-md border border-gray-200">
-            <h1 className="text-2xl font-bold text-charcoal-black mb-1">Create an Account</h1>
+            <h1 className="text-xl font-bold text-charcoal-black mb-1">Create an Account</h1>
             <p className="text-charcoal-black/60 mb-6">Start your productivity journey today.</p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -111,14 +99,13 @@ export default function SignUpPage() {
 
             <p className="mt-6 text-center text-sm text-charcoal-black/60">
               Already have an account?{" "}
-              <Link href="/login" className="font-semibold text-electric-blue hover:underline">
+              <Link href="/auth/login" className="font-semibold text-electric-blue hover:underline">
                 Sign In
               </Link>
             </p>
           </div>
         </div>
       </div>
-      <ComingSoonModal open={comingSoonOpen} onOpenChange={setComingSoonOpen} featureName={selectedFeature} />
     </>
   )
 }

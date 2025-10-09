@@ -2,11 +2,13 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { DoItLogo, DoItWordmark } from "@/components/do-it-logo"
 import { Button } from "@/components/ui/button"
 import { ComingSoonModal } from "@/components/coming-soon-modal"
 import { Drawer } from "vaul"
 import { MobileMockup } from "@/components/mobile-mockup"
+import { AgendosLogo } from "@/components/brand/logo/AgendosLogo"
+import { AgendosWordmark } from "@/components/brand/logo/AgendosWordmark"
+import { AgendosIcon } from "@/components/brand/logo/AgendosIcon"
 
 export default function LandingPage() {
   const [comingSoonOpen, setComingSoonOpen] = useState(false)
@@ -24,8 +26,9 @@ export default function LandingPage() {
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-3">
-              <DoItLogo size={40} /><DoItWordmark height={32} /></Link>
+            <Link href="/" className="flex items-center" aria-label="Agendos Homepage">
+              <AgendosLogo className="text-3xl" />
+            </Link>
             <ul className="hidden md:flex items-center gap-8">
               <li>
                 <a href="#features" className="text-[#1E1E1E] font-semibold hover:text-[#007AFF] transition-colors">
@@ -102,41 +105,40 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 bg-gradient-to-br from-[#0A1628] to-[#1E3A52] text-white min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-                Get Things Done with <span className="text-[#FF7A00]">DO-IT</span>
+      <section className="bg-gradient-to-br from-[#0A1628] to-[#1E3A52] text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 min-h-screen flex flex-col justify-center">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 py-20 md:py-24">
+            <div className="md:w-1/2 lg:w-3/5 text-center md:text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+                Get Things Done with <span className="text-[#FF7A00]">AGENDOS</span>
               </h1>
-              <p className="text-lg sm:text-xl text-[#8B9DB8] mb-8 leading-relaxed">
+              <p className="text-lg sm:text-xl text-[#8B9DB8] mb-10 leading-relaxed max-w-2xl mx-auto md:mx-0">
                 The intelligent productivity app that helps you focus, achieve goals, and build lasting habits.
                 Transform your daily tasks into meaningful accomplishments.
               </p>
-              <div className="flex justify-center md:hidden my-8">
+              {/* Mobile-only Logo */}
+              <div className="md:hidden flex justify-center my-8">
                 <div className="w-60 h-60 sm:w-72 sm:h-72 bg-[#007AFF] rounded-[60px] flex items-center justify-center shadow-2xl animate-float">
-                  <DoItLogo size={150} variant="hero" className="drop-shadow-2xl"/>
+                  <AgendosIcon className="w-36 h-36" variant="light" />
                 </div>
               </div>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <Link href="/auth/signup">
-                  <Button className="bg-[#007AFF] hover:bg-[#0055CC] text-white px-8 py-6 text-lg rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+                  <Button className="bg-[#007AFF] hover:bg-[#0055CC] text-white px-6 py-5 text-base rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 border-2 border-transparent">
                     Get Started
                   </Button>
                 </Link>
                 <Link href="/brand">
-                  <Button
-                    variant="outline"
-                    className="border-2 border-[#007AFF] text-[#007AFF] hover:bg-[#007AFF] hover:text-white px-8 py-6 text-lg rounded-xl font-bold transition-all hover:-translate-y-1 bg-transparent"
-                  >
+                  <Button className="border-2 border-[#007AFF] text-white hover:bg-[#0055CC] hover:text-white px-6 py-5 text-base rounded-xl font-bold transition-all hover:-translate-y-1 bg-transparent">
                     View Branding
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="hidden md:flex justify-center">
-              <div className="w-60 h-60 sm:w-72 sm:h-72 bg-[#007AFF] rounded-[60px] flex items-center justify-center shadow-2xl animate-float">
-                <DoItLogo size={150} variant="hero" className="drop-shadow-2xl"/>
+            {/* Desktop-only Logo */}
+            <div className="hidden md:flex md:w-1/2 lg:w-2/5 justify-center mt-8 md:mt-0">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 bg-[#007AFF] rounded-[60px] flex items-center justify-center shadow-2xl animate-float">
+                <AgendosIcon className="w-36 h-36" variant="light" />
               </div>
             </div>
           </div>
@@ -147,10 +149,10 @@ export default function LandingPage() {
       <section id="features" className="py-20 px-6 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1E1E1E] mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1E1E1E] mb-4">
               Everything You Need to Stay Productive
             </h2>
-            <p className="text-lg sm:text-xl text-[#8B9DB8]">
+            <p className="text-base sm:text-lg text-[#8B9DB8]">
               Powerful features designed to help you accomplish more with less stress
             </p>
           </div>
@@ -173,7 +175,7 @@ export default function LandingPage() {
                   <circle cx="27" cy="12" r="2.5" fill="#FF7A00" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#1E1E1E] mb-2 text-center">Tasks</h3>
+              <h3 className="text-lg font-bold text-[#1E1E1E] mb-2 text-center">Tasks</h3>
               <p className="text-[#8B9DB8] text-center">Organize your daily to-dos with smart lists and priorities</p>
             </div>
 
@@ -188,34 +190,35 @@ export default function LandingPage() {
                   <circle cx="32" cy="4" r="2" fill="#FF7A00" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#1E1E1E] mb-2 text-center">Goals</h3>
+              <h3 className="text-lg font-bold text-[#1E1E1E] mb-2 text-center">Goals</h3>
               <p className="text-[#8B9DB8] text-center">Set and track meaningful goals with progress visualization</p>
             </div>
 
             {/* Reminders */}
             <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="w-20 h-20 bg-[#162B42] rounded-full flex items-center justify-center mb-6 transition-transform hover:scale-110 mx-auto">
-                <svg width="40" height="40" viewBox="0 0 40 40">
-                  <path
-                    d="M 12,15 Q 12,9 17,9 L 23,9 Q 28,9 28,15 L 28,24 Q 28,27 25,27 L 15,27 Q 12,27 12,24 Z"
-                    fill="none"
-                    stroke="#FF7A00"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                  <rect x="16" y="6" width="8" height="3" rx="1.5" fill="#FF7A00" />
-                  <path
-                    d="M 13,27 Q 13,31 20,31 Q 27,31 27,27"
-                    fill="none"
-                    stroke="#FF7A00"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#FF7A00"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#1E1E1E] mb-2 text-center">Reminders</h3>
-              <p className="text-[#8B9DB8] text-center">Never miss important deadlines with smart notifications</p>
+
+              <h3 className="text-lg font-bold text-[#1E1E1E] mb-2 text-center">Reminders</h3>
+              <p className="text-[#8B9DB8] text-center">
+                Never miss important deadlines with smart notifications
+              </p>
             </div>
+
 
             {/* Analytics */}
             <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
@@ -234,7 +237,7 @@ export default function LandingPage() {
                   <circle cx="24" cy="14" r="2.5" fill="#FF7A00" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#1E1E1E] mb-2 text-center">Analytics</h3>
+              <h3 className="text-lg font-bold text-[#1E1E1E] mb-2 text-center">Analytics</h3>
               <p className="text-[#8B9DB8] text-center">
                 Visualize your productivity with insightful charts and reports
               </p>
@@ -250,7 +253,7 @@ export default function LandingPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#1E1E1E] mb-2 text-center">Wellness</h3>
+              <h3 className="text-lg font-bold text-[#1E1E1E] mb-2 text-center">Wellness</h3>
               <p className="text-[#8B9DB8] text-center">Track health metrics and maintain work-life balance</p>
             </div>
 
@@ -269,7 +272,7 @@ export default function LandingPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#1E1E1E] mb-2 text-center">Habits</h3>
+              <h3 className="text-lg font-bold text-[#1E1E1E] mb-2 text-center">Habits</h3>
               <p className="text-[#8B9DB8] text-center">Build positive routines with streak tracking and rewards</p>
             </div>
           </div>
@@ -280,8 +283,8 @@ export default function LandingPage() {
       <section id="how" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1E1E1E] mb-4">How It Works</h2>
-            <p className="text-lg sm:text-xl text-[#8B9DB8]">Get started in three simple steps</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1E1E1E] mb-4">How It Works</h2>
+            <p className="text-base sm:text-lg text-[#8B9DB8]">Get started in three simple steps</p>
           </div>
           <div className="grid md:grid-cols-3 gap-12 md:gap-8">
             {[
@@ -305,7 +308,7 @@ export default function LandingPage() {
                 <div className="w-16 h-16 bg-[#FF7A00] text-white rounded-full flex items-center justify-center text-2xl font-extrabold mx-auto mb-6 shadow-lg">
                   {step.num}
                 </div>
-                <h3 className="text-2xl font-bold text-[#1E1E1E] mb-4">{step.title}</h3>
+                <h3 className="text-xl font-bold text-[#1E1E1E] mb-4">{step.title}</h3>
                 <p className="text-[#8B9DB8] leading-relaxed">{step.desc}</p>
               </div>
             ))}
@@ -316,8 +319,8 @@ export default function LandingPage() {
       {/* App Preview */}
       <section className="py-20 px-6 bg-gradient-to-br from-[#007AFF] to-[#0055CC] text-white text-center">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Beautiful Design Meets Powerful Functionality</h2>
-          <p className="text-lg sm:text-xl mb-12 text-white/90">Experience productivity that feels effortless</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4">Beautiful Design Meets Powerful Functionality</h2>
+          <p className="text-base sm:text-lg mb-12 text-white/90">Experience productivity that feels effortless</p>
           <div className="flex justify-center">
             <MobileMockup />
           </div>
@@ -327,11 +330,11 @@ export default function LandingPage() {
       {/* Download Section */}
       <section id="download" className="py-20 px-6 bg-[#F5F5F5] text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1E1E1E] mb-6">Ready to Get Things Done?</h2>
-          <p className="text-lg sm:text-xl text-[#8B9DB8] mb-12">Download DO-IT today and transform the way you work</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1E1E1E] mb-6">Ready to Get Things Done?</h2>
+          <p className="text-base sm:text-lg text-[#8B9DB8] mb-12">Download AGENDOS today and transform the way you work</p>
           <div className="flex flex-wrap justify-center gap-6">
             <Button
-              className="bg-[#1E1E1E] hover:bg-[#007AFF] text-white px-8 py-6 text-lg rounded-xl font-semibold transition-all hover:-translate-y-1 shadow-lg"
+              className="bg-[#1E1E1E] hover:bg-[#007AFF] text-white px-6 py-5 text-base rounded-xl font-semibold transition-all hover:-translate-y-1 shadow-lg"
               onClick={() => handleFeatureClick("App Store")}
             >
               <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
@@ -340,7 +343,7 @@ export default function LandingPage() {
               App Store
             </Button>
             <Button
-              className="bg-[#1E1E1E] hover:bg-[#007AFF] text-white px-8 py-6 text-lg rounded-xl font-semibold transition-all hover:-translate-y-1 shadow-lg"
+              className="bg-[#1E1E1E] hover:bg-[#007AFF] text-white px-6 py-5 text-base rounded-xl font-semibold transition-all hover:-translate-y-1 shadow-lg"
               onClick={() => handleFeatureClick("Google Play")}
             >
               <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
@@ -357,9 +360,8 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
             <div className="flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <DoItLogo size={32} href="/" />
-                <DoItWordmark height={28} variant="inverse" href="/" />
+              <div className="flex items-center mb-4">
+                <AgendosLogo variant="dark" className="text-3xl" />
               </div>
               <p className="text-sm">Transform your daily tasks into meaningful accomplishments.</p>
             </div>
@@ -425,7 +427,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="border-t border-[#1E3A52] pt-8 text-center text-sm">
-            <p>&copy; 2025 DO-IT. All rights reserved.</p>
+            <p>&copy; 2025 AGENDOS. All rights reserved.</p>
           </div>
         </div>
       </footer>

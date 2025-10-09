@@ -1,9 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { DoItLogo } from "./do-it-logo"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Sparkles } from "lucide-react"
+import { AgendosLogo } from "./brand/logo/AgendosLogo"
 
 interface ComingSoonModalProps {
   open: boolean
@@ -26,7 +26,7 @@ export function ComingSoonModal({ open, onOpenChange, featureName = "This featur
             }}
             className="mx-auto"
           >
-            <DoItLogo size={80} />
+            <AgendosLogo className="text-4xl" />
           </motion.div>
 
           <motion.div
@@ -35,7 +35,7 @@ export function ComingSoonModal({ open, onOpenChange, featureName = "This featur
             transition={{ delay: 0.2 }}
             className="space-y-2"
           >
-            <DialogTitle className="text-2xl font-bold text-center flex items-center justify-center gap-2">
+            <DialogTitle className="text-xl font-bold text-center flex items-center justify-center gap-2">
               <motion.div
                 animate={{
                   rotate: [0, 10, -10, 10, 0],
@@ -54,7 +54,7 @@ export function ComingSoonModal({ open, onOpenChange, featureName = "This featur
               </span>
             </DialogTitle>
 
-            <DialogDescription className="text-center text-base text-charcoal-black/70">
+            <DialogDescription className="text-center text-sm text-charcoal-black/70">
               {featureName} is currently under development. We're working hard to bring you an amazing experience!
             </DialogDescription>
           </motion.div>

@@ -49,11 +49,11 @@ export default function SettingsPage() {
     <AppShell>
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold text-charcoal-black">Settings</h1>
+          <h1 className="text-2xl font-bold text-charcoal-black">Settings</h1>
           <p className="text-charcoal-black/60 mt-1">Welcome back! Here's your app settings overview.</p>
         </div>
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-          <h2 className="text-xl font-bold text-charcoal-black">Coming Soon</h2>
+          <h2 className="text-lg font-bold text-charcoal-black">Coming Soon</h2>
           <p className="text-charcoal-black/60 mt-2">Your personalized settings is under construction. Stay tuned!</p>
         </div>
       </div>

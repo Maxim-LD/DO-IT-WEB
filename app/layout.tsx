@@ -13,9 +13,9 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "DO-IT - Get Things Done",
+  title: "AGENDOS - Get Things Done",
   description: "The intelligent productivity app that helps you focus, achieve goals, and build lasting habits",
-  generator: "v0.app",
+  //generator: "v0.app",
 }
 
 export default function RootLayout({

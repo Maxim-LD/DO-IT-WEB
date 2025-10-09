@@ -1,4 +1,5 @@
-import { DoItIcon, DoItLogo, DoItWordmark } from "./do-it-logo"
+import { AgendosIcon } from "@/components/brand/logo/AgendosIcon"
+import { AgendosWordmark } from "@/components/brand/logo/AgendosWordmark"
 import { CheckCircle2, Circle, Plus, Flame, Bell } from "lucide-react"
 
 export function MobileMockup() {
@@ -18,12 +19,10 @@ export function MobileMockup() {
       <div className="px-6 py-4 bg-[#F5F5F5] h-full">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3">
-            <DoItIcon size={40} />
+          <div className="flex items-center gap-2">
+            <AgendosIcon className="w-10 h-10" />
             <div>
-              <h1 className="text-xl font-bold text-[#1E1E1E]" style={{ fontFamily: "var(--font-poppins)" }}>
-                <DoItWordmark height={32} />
-              </h1>
+              <AgendosWordmark className="text-xl" />
               <p className="text-xs text-[#1E1E1E]/60">Wednesday, Jan 10</p>
             </div>
           </div>
@@ -39,7 +38,7 @@ export function MobileMockup() {
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <Flame className="w-6 h-6 text-[#FF7A00]" />
-              <span className="text-white font-bold text-lg">12 Day Streak!</span>
+              <span className="text-white font-bold text-base">12 Day Streak!</span>
             </div>
             <span className="text-white/80 text-sm">Keep it up!</span>
           </div>
@@ -63,7 +62,7 @@ export function MobileMockup() {
 
         {/* Tasks */}
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-bold text-[#1E1E1E]" style={{ fontFamily: "var(--font-poppins)" }}>
+          <h2 className="text-base font-bold text-[#1E1E1E]" style={{ fontFamily: "var(--font-poppins)" }}>
             Tasks
           </h2>
           <button className="text-[#007AFF] text-sm font-semibold">View All</button>

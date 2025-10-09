@@ -1,6 +1,6 @@
-# DO-IT: The Intelligent Productivity App
+# AGENDOS: The Intelligent Productivity App
 
-DO-IT is a modern, intelligent productivity application designed to help you focus, achieve your goals, and build lasting habits. Transform your daily tasks into meaningful accomplishments with a beautiful and intuitive interface.
+AGENDOS is a modern, intelligent productivity application designed to help you focus, achieve your goals, and build lasting habits. Transform your daily tasks into meaningful accomplishments with a beautiful and intuitive interface.
 
 ## ✨ Core Features
 
@@ -35,7 +35,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  Clone the repo
     ```sh
-    git clone https://github.com/your_username/do-it-bid.git
+    git clone https://github.com/your_username/agendos-web.git
     ```
 2.  Install NPM packages
     ```sh
@@ -48,5 +48,3 @@ To get a local copy up and running, follow these simple steps.
 4.  Open http://localhost:3000 with your browser to see the result.
 
 ---
-
-Created with v0 by Vercel
