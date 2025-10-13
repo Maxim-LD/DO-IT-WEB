@@ -25,7 +25,7 @@ export default function ForgotPasswordPage() {
     setError("")
 
     try {
-      const response = await fetch("http://localhost:3200/api/v1/auth/forgot-password", {
+      const response = await fetch("https://agendos-api.onrender.com/api/v1/auth/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

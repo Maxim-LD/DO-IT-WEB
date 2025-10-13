@@ -82,7 +82,7 @@ export default function SignUpPage() {
     }
 
     try {
-      const res = await fetch('http://localhost:3200/api/v1/auth/signup', {
+      const res = await fetch('https://agendos-api.onrender.com/api/v1/auth/signup', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
