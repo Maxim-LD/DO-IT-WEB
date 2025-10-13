@@ -42,7 +42,7 @@ export default function LoginPage() {
     setFormError(null)
 
     try {
-      const res = await fetch('https://agendos-api.onrender.com/api/v1/auth/signup', {
+      const res = await fetch('https://agendos-api.onrender.com/api/v1/auth/login', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
