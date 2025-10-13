@@ -3,7 +3,9 @@ import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import { Toaster } from "sonner"
 import "./globals.css"
+import { AuthProvider } from "@/contexts/auth-context"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -27,8 +29,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.variable} font-sans`}>
         <Suspense fallback={null}>
-          {children}
-          <Analytics />
+          <AuthProvider>
+            {children}
+            <Analytics />
+            <Toaster richColors closeButton />
+          </AuthProvider>
         </Suspense>
       </body>
     </html>
