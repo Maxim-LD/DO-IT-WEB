@@ -82,7 +82,8 @@ export default function SignUpPage() {
     }
 
     try {
-      const res = await fetch('https://agendos-api.onrender.com/api/v1/auth/signup', {
+      const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/signup`;
+      const res = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"

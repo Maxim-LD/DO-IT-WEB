@@ -42,7 +42,8 @@ export default function LoginPage() {
     setFormError(null)
 
     try {
-      const res = await fetch('https://agendos-api.onrender.com/api/v1/auth/login', {
+      const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/login`;
+      const res = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

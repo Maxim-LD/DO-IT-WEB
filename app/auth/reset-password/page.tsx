@@ -87,7 +87,8 @@ function ResetPasswordForm() {
         setIsLoading(true)
 
         try {
-            const response = await fetch("https://agendos-api.onrender.com/api/v1/auth/reset-password", {
+            const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/reset-password`;
+            const response = await fetch(apiUrl, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
